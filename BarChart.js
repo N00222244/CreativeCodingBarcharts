@@ -337,7 +337,7 @@ class ScatterPlotChart {
 }
 
 
-class HorizontalBarChart {
+class HorizontalBarChart{
 	constructor(obj) {
 
         //Position and Size propeties
@@ -412,7 +412,7 @@ class HorizontalBarChart {
         //console.log(this.axisLineThickness);
 
 		line(0, 0, this.w, 0);
-		line(0, 0, 0, -this.h);
+		line(0, 0, 0, this.h);
 
         // Design for bars
 
@@ -436,7 +436,7 @@ class HorizontalBarChart {
 			//prettier-ignore
 			let jump = (barGap * (i+1)) + (this.barWidth * i);
 			let colHeight = this.data[i][this.yAxisValue] * scale;
-			rect(jump, 0, this.barWidth, -colHeight);
+			rect(0,jump, colHeight, this.barWidth);
 
             noStroke();
             fill(this.labelColour);
@@ -455,7 +455,7 @@ class HorizontalBarChart {
         
         // tickgap is calculated bt dividing the height by the number of ticks
 
-        let tickGap = this.h / this.numTicks;
+        let tickGap = -this.h / this.numTicks;
 
         // for Each instance i is less than or equal to  numTicks draw a tick with values. <= is used to ensure an extra tick is placed at the top 
 
@@ -500,3 +500,4 @@ class HorizontalBarChart {
         pop();
 	}
 }
+

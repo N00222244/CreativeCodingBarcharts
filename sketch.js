@@ -2,7 +2,7 @@ let data;
 let cleanData = [];
 let barCharts = [];
 let scatterplotCharts = [];
-let HorizontalBarChart = [];
+let HorizontalBarCharts = [];
 
 let canvasWidth = 2000;
 let canvasHeight = 2000;
@@ -145,11 +145,54 @@ function setup() {
  
      };
 
+
+     let horizontalBarChart01 = {
+        x: 70,
+        y: 700,
+        w: 250,
+        h:250,
+ 
+        data: cleanData,
+        yAxisValue: "Total",
+        xAxisLabel: "Age_Group",
+        axisLineColour: "#FFFFFF",
+        axisLineThickness: 1,
+ 
+        barWidth: 15,
+        barColour: "#db1818",
+        barStrokeThickness: 1,
+        barStrokeColour: "#FFFFFF",
+ 
+        titleText: "Total Road Death Cases by Age Group",
+        titleXOffset: -30,
+        titleYOffset: 50,
+        titleWidth: 300,
+        titleSize: 20,
+        titlecolour:"#fafafa",
+        tickColour:"#fafafa",
+        tickStrokeWeight: 1,
+        tickStrokeLength: 10,
+        tickPadding: 10,
+        numTicks:5,
+        tickTextColour: "#00FF00",
+        tickTextSize: 14,
+        tickDecimals: 0,
+ 
+        labelPadding: 11,
+        labelRotation: 60,
+        labelTextSixe: 12,
+        labelColour: "#fafafa",
+ 
+     };
+
+
+
     
 
 	barCharts.push(new BarChart(barChart01));
     barCharts.push(new BarChart(barChart02));
     scatterplotCharts.push(new ScatterPlotChart(scatterPlotChart01));
+    HorizontalBarCharts.push(new HorizontalBarChart(horizontalBarChart01))
     
 }
 
@@ -157,4 +200,5 @@ function draw() {
 	background(backgroundColour);
 	barCharts.forEach((barChart) => barChart.render());
     scatterplotCharts.forEach((scatterPlotChart) => scatterPlotChart.render());
+    HorizontalBarCharts.forEach((horizontalBarChart) => horizontalBarChart.render());
 }
