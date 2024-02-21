@@ -1,59 +1,71 @@
-let barCharts = [];
 let data;
-let cleanData=[];
-let numRows;
+let cleanData = [];
+let barCharts = [];
 
-function preload(){
-    data = loadTable("data/combined.csv", "csv", "header");
+let canvasWidth = 600;
+let canvasHeight = 600;
+
+// Colours
+let backgroundColour = "#000000";
+
+
+
+function preload() {
+	data = loadTable("data/Combined.csv", "csv", "header");
 }
 
-function setup(){
-    background(50)
-    createCanvas(500,500)
+function setup() {
+	createCanvas(canvasWidth, canvasHeight);
+    angleMode(DEGREES);
 
-    numRows = data.rows.length;
-    for(let i=0;i<numRows;i++){
-        cleanData.push(data.rows[i].obj)
-    }
+	for (let i = 0; i < data.rows.length; i++) {
+		cleanData.push(data.rows[i].obj);
+	}
 
+	numBars = cleanData.length;
 
     let barChart01 = {
-        data:cleanData,
-        chartHeight:200,
-        chartWidth:200,
-        xPos:250,
-        yPos:450,
-        axisLineColour:"#d9d9d9",
-        barWidth:10,
-        yValue: 'Total',
-        xValue:"Age_Group",
-        numTicks: 5
-    }
+       x: 70,
+       y: 350,
+       w: 250,
+       h:250,
 
-    let barChart02 = {
-        data:cleanData,
-        chartHeight:200,
-        chartWidth:200,
-        xPos:50,
-        yPos:250,
-        axisLineColour:"#d9d9d9",
-        barWidth:10,
-        yValue: 'Total'
-    }
+       data: cleanData,
+       yAxisValue: "Total",
+       xAxisLabel: "Age_Group",
+       axisLineColour: "#FFFFFF",
+       axisLineThickness: 1,
 
-    barCharts.push(new BarChart(barChart01))
-  
+       barWidth: 15,
+       barColour: "#db1818",
+       barStrokeThickness: 1,
+       barStrokeColour: "#FFFFFF",
 
+       titleText: "Total Road Death Cases by Age Group",
+       titleXOffset: -30,
+       titleYOffset: 50,
+       titleWidth: 300,
+       titleSize: 20,
+       titlecolour:"#fafafa",
+       tickColour:"#fafafa",
+       tickStrokeWeight: 1,
+       tickStrokeLength: 10,
+       tickPadding: 10,
+       numTicks:5,
+       tickTextColour: "#00FF00",
+       tickTextSize: 14,
+       tickDecimals: 0,
 
+       labelPadding: 11,
+       labelRotation: 60,
+       labelTextSixe: 12,
+       labelColour: "#fafafa",
+    };
 
-    //barCharts.push(new BarChart(cleanData,80,80,50,350,"#ff0000"));
-    //barCharts.push(new BarChart(cleanData,200,200,50,450,"#d9d9d9",10))
-    //barCharts.push(new BarChart(cleanData,200,200,250,450,"#d9d9d9",10))
-    //barCharts.push(new BarChart(cleanData,400,400,50,450,"#d9d9d9"))
+	barCharts.push(new BarChart(barChart01));
 }
 
 function draw() {
-    background(50);
-    barCharts.forEach(bar => bar.render())
+	background(backgroundColour);
+	barCharts.forEach((barChart) => barChart.render());
 }
-
