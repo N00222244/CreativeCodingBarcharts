@@ -117,8 +117,8 @@ function setup() {
         axisLineColour: "#FFFFFF",
         axisLineThickness: 1,
  
-        plotWidth: 5,
-        plotHeight: 5,
+        plotWidth: 10,
+        plotHeight: 10,
         plotColour: "#db1818",
         plotStrokeThickness: 1,
         plotStrokeColour: "#FFFFFF",
@@ -179,7 +179,7 @@ function setup() {
         tickDecimals: 0,
  
         labelPadding: 11,
-        labelRotation: 60,
+        labelRotation: 300,
         labelTextSixe: 12,
         labelColour: "#fafafa",
  
