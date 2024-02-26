@@ -148,7 +148,7 @@ function setup() {
 
 
      let horizontalBarChart01 = {
-        x: 70,
+        x: 200,
         y: 700,
         w: 250,
         h:250,
@@ -178,11 +178,13 @@ function setup() {
         tickTextColour: "#00FF00",
         tickTextSize: 14,
         tickDecimals: 0,
+        tickRotation:180,
  
         labelPadding: 11,
-        labelRotation: 300,
+        labelRotation: 0,
         labelTextSixe: 12,
         labelColour: "#fafafa",
+        labelPadding: 100,
  
      };
 
@@ -225,6 +227,8 @@ function setup() {
         labelColour: "#fafafa",
  
      };
+
+     
 
 
     
