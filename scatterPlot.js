@@ -90,7 +90,7 @@ class ScatterPlotChart {
         let maxValue = max(this.data.map((x) => x.Total)) 
         let scale = this.h / max(this.data.map((x) => x.Total));
 
-        console.log(plotGap);
+        //console.log(plotGap);
         
         //console.log(scale)
 		// console.log(barGap);
@@ -116,7 +116,7 @@ class ScatterPlotChart {
             
             translate(jump + this.plotWidth / 2, this.labelPadding )
             rotate(this.labelRotation);
-            text(labels[i], 0, 0);
+            text(this.data[i][this.yAxisValue], this.plotWidth / 2, -this.data[i][this.yAxisValue] * this.scale -5) 
             pop();
         }
 
