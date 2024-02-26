@@ -71,14 +71,14 @@ class HorizontalBarChart{
 		line(0, 0, this.h, 0);
 		line(0, 0, 0, -this.w);
 
+        text(this.titleText, this.titleXOffset,this.titleYOffset);
+
         //Debugging - axis lines werent showing up spell mistake :(
         // console.log(this.axisLineColour);
         //console.log(this.axisLineThickness);
         // Design for bars
 
-		stroke(this.barStrokeColour);
-        strokeWeight(this.barStrokeThickness);
-		fill(this.barColour);
+		
 		//bargap is calculated using the number of bars * by the bar width which is then dived by the the number of bars +1, this is then taken away from the width of the chartwidth or w in this case
 		let barGap = (this.w - (this.numBars * this.barWidth)) / (this.numBars + 1);
         let maxValue = max(this.data.map((x) => x.Total)) 
@@ -86,6 +86,11 @@ class HorizontalBarChart{
     
 
 		for (let i = 0; i < this.numBars; i++) {
+
+            stroke(this.barStrokeColour);
+        strokeWeight(this.barStrokeThickness);
+		fill(this.barColour);
+
 			//prettier-ignore
 			let jump = (barGap * (i+1)) + (this.barWidth * i);
 			let colHeight = this.data[i][this.yAxisValue] * scale;

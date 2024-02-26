@@ -49,11 +49,7 @@ class BarChart {
         this.labelTextsize = obj.labelTextsize;
         this.labelColour = obj.labelColour;
 
-
-
-
 	}
-
 
 
 	render() {
@@ -63,38 +59,33 @@ class BarChart {
         //translation of the point of orgin for the axis(based of parameters passed through the instance of the barchart class) + axis design 
 
 		translate(this.x, this.y);
-
 		noFill();
 		stroke(this.axisLineColour);
 		strokeWeight(this.axisLineThickness);
       
-        //Debugging - axis lines werent showing up spell mistake :(
-        // console.log(this.axisLineColour);
-        //console.log(this.axisLineThickness);
-
 		line(0, 0, this.w, 0);
 		line(0, 0, 0, -this.h);
 
-        // Design for bars
 
-		stroke(this.barStrokeColour);
-        strokeWeight(this.barStrokeThickness);
-		fill(this.barColour);
+        //Title 
 
-        
+        text(this.titleText, this.titleXOffset,this.titleYOffset);
+
+	
 		//bargap is calculated using the number of bars * by the bar width which is then dived by the the number of bars +1, this is then taken away from the width of the chartwidth or w in this case
-		let barGap = (this.w - (this.numBars * this.barWidth)) / (this.numBars + 1);
-
-
+		let barGap = (this.w - (this.numBars * this.barWidth)) / (this.numBars + 1); 
         let maxValue = max(this.data.map((x) => x.Total)) 
         let scale = this.h / max(this.data.map((x) => x.Total));
         
-        //console.log(scale)
-		// console.log(barGap);
-
-
+       
 		for (let i = 0; i < this.numBars; i++) {
-			//prettier-ignore
+            
+            //Design
+            stroke(this.barStrokeColour);
+            strokeWeight(this.barStrokeThickness);
+		    fill(this.barColour);
+
+
 			let jump = (barGap * (i+1)) + (this.barWidth * i);
 			let colHeight = this.data[i][this.yAxisValue] * scale;
 			rect(jump, 0, this.barWidth, -colHeight);
@@ -114,13 +105,11 @@ class BarChart {
         //Draw Ticks 
         stroke(this.tickColour);
         
-        // tickgap is calculated bt dividing the height by the number of ticks
+        
 
-        let tickGap = this.h / this.numTicks;
-
-        // for Each instance i is less than or equal to  numTicks draw a tick with values. <= is used to ensure an extra tick is placed at the top 
-
-        for(let i = 0; i <= this.numTicks; i ++){
+        let tickGap = this.h / this.numTicks; // tickgap is calculated bt dividing the height by the number of ticks
+         // for Each instance i is less than or equal to  numTicks draw a tick with values. <= is used to ensure an extra tick is placed at the top 
+        for(let i = 0; i <= this.numTicks; i ++){ 
             line(0,-i * tickGap, -this.tickStrokeLength, -i * tickGap)
             
             //Drawing Ticks along y axis

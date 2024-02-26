@@ -76,11 +76,11 @@ class ScatterPlotChart {
 		line(0, 0, this.w, 0);
 		line(0, 0, 0, -this.h);
 
+        text(this.titleText, this.titleXOffset,this.titleYOffset);
+
         // Design for plotted points
 
-		stroke(this.plotStrokeColour);
-        strokeWeight(this.plotStrokeThickness);
-		fill(this.plotColour);
+		
 
         
 		//plotgap is calculated using the number of bars * by the bar width which is then dived by the the number of bars +1, this is then taken away from the width of the chartwidth or w in this case
@@ -97,6 +97,13 @@ class ScatterPlotChart {
 
 
 		for (let i = 0; i < this.numPlots; i++) {
+
+
+            stroke(this.plotStrokeColour);
+        strokeWeight(this.plotStrokeThickness);
+		fill(this.plotColour);
+
+
 			//prettier-ignore
 
             // jump caluclates where the next plot will be placed taking into account the bar gap and the plot with with the iteration and i 

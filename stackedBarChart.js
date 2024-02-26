@@ -66,11 +66,22 @@ class StackedBarChart {
 		line(0, 0, this.w, 0);
 		line(0, 0, 0, -this.h);
 
+        text(this.titleText, this.titleXOffset,this.titleYOffset);
 
+        
+        
+        rect(300,-180,200,125);
+        text("Key", 350, -160);
+        
+        rect(325,-140,25,25);
+        rect(325,-100,25,25);
+        
+        
+
+        
 
         // bar chart
-		stroke(this.barStrokeColour);
-        strokeWeight(this.barStrokeThickness);
+		
 		let barGap = (this.w - (this.numBars * this.barWidth)) / (this.numBars + 1);
         let maxValue = max(this.data.map((x) => x.Total)) 
         let scale = this.h / max(this.data.map((x) => x.Total));
@@ -81,8 +92,11 @@ class StackedBarChart {
 
 
 		for (let i = 0; i < this.numBars; i++) {
+
+            stroke(this.barStrokeColour);
+            strokeWeight(this.barStrokeThickness);
 			
-			let jump = (barGap * (i+1)) + (this.barWidth * i);
+			//let jump = (barGap * (i+1)) + (this.barWidth * i);
 			//let colHeight = this.data[i][this.yAxisValue] * scale;
 			//rect(jump, 0, this.barWidth, -colHeight);
 
@@ -99,6 +113,12 @@ class StackedBarChart {
             pop();
 
             
+            
+        
+
+
+
+            //let average = (cleanData.values )
 
             push();
             for(let j = 0; j < this.yAxisValue.length; j++){
