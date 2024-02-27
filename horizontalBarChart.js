@@ -52,7 +52,7 @@ class HorizontalBarChart{
         this.labelTextsize = obj.labelTextsize;
         this.labelColour = obj.labelColour;
         this.labelPadding = obj.labelPadding;
-
+      
 
 
 
@@ -73,6 +73,7 @@ class HorizontalBarChart{
 		line(0, 0, 0, -this.w);
 
         text(this.titleText, this.titleXOffset,this.titleYOffset);
+
 
         //Debugging - axis lines werent showing up spell mistake :(
         // console.log(this.axisLineColour);

@@ -49,6 +49,12 @@ class BarChart {
         this.labelRotation = obj.labelRotation;
         this.labelTextsize = obj.labelTextsize;
         this.labelColour = obj.labelColour;
+        this.labelX = obj.labelX;
+        this.labelY = obj.labelY;
+        this.yLabelYOffset = obj.yLabelYOffset;
+        this.xLabelYOffset = obj.xLabelYOffset;
+        this.xLabelXOffset = obj.yLabelXOffset;
+        this.yLabelXOffset = obj.yLabelXOffset;
 
 	}
 
@@ -71,6 +77,12 @@ class BarChart {
         //Title 
 
         text(this.titleText, this.titleXOffset,this.titleYOffset);
+        push();
+        rotate(270);
+        
+        text(this.labelY,this.xLabelYOffset,this.yLabelYOffset);
+        pop();
+        text(this.labelX, this.xLabelXOffset,this.yLabelXOffset);
 
 	
 		//bargap is calculated using the number of bars * by the bar width which is then dived by the the number of bars +1, this is then taken away from the width of the chartwidth or w in this case

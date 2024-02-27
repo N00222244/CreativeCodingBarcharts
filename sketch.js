@@ -67,6 +67,13 @@ function setup() {
        labelRotation: 60,
        labelTextSixe: 12,
        labelColour: "#000000",
+       labelX:"Year",
+       labelY:"Trips Taken",
+       yLabelYOffset:-90,
+       xLabelYOffset:150,
+       yLabelXOffset:50,
+       xLabelXOffset:600,
+
 
     };
 
@@ -107,6 +114,12 @@ function setup() {
         labelRotation: 60,
         labelTextSixe: 12,
         labelColour: "#000000",
+        labelX:"Year",
+        labelY:"Trips Taken",
+        yLabelYOffset:-90,
+        xLabelYOffset:150,
+        yLabelXOffset:50,
+        xLabelXOffset:600,
  
      };
 
@@ -149,6 +162,10 @@ function setup() {
         labelRotation: 60,
         labelTextSixe: 12,
         labelColour: "#000000",
+        yLabelYOffset:-90,
+        xLabelYOffset:150,
+        yLabelXOffset:50,
+        xLabelXOffset:600,
  
      };
 
@@ -192,6 +209,11 @@ function setup() {
         labelTextSixe: 12,
         labelColour: "#000000",
         labelPadding: 25,
+        yLabelYOffset:-90,
+        xLabelYOffset:150,
+        yLabelXOffset:50,
+        xLabelXOffset:600,
+        
  
      };
 
@@ -234,6 +256,10 @@ function setup() {
         labelTextSixe: 12,
         labelColour: "#000000",
         labelPadding: 20,
+        yLabelYOffset:-90,
+        xLabelYOffset:150,
+        yLabelXOffset:50,
+        xLabelXOffset:600,
  
      };
 
@@ -274,6 +300,10 @@ function setup() {
         labelRotation: 60,
         labelTextSixe: 12,
         labelColour: "#000000",
+        yLabelYOffset:-90,
+        xLabelYOffset:150,
+        yLabelXOffset:50,
+        xLabelXOffset:600,
  
      };
 

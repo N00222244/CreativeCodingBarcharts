@@ -48,6 +48,8 @@ class StackedBarChart {
         this.labelRotation = obj.labelRotation;
         this.labelTextsize = obj.labelTextsize;
         this.labelColour = obj.labelColour;
+        this.yLabelYOffset = obj.yLabelYOffset;
+
 
 
 
@@ -69,6 +71,7 @@ class StackedBarChart {
         
         text(this.titleText, this.titleXOffset,this.titleYOffset);
 
+        
         push();
         
         rect(300,-180,200,125);

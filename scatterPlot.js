@@ -51,6 +51,10 @@ class ScatterPlotChart {
         this.labelRotation = obj.labelRotation;
         this.labelTextsize = obj.labelTextsize;
         this.labelColour = obj.labelColour;
+        this.yLabelYOffset = obj.yLabelYOffset;
+        this.xLabelYOffset = obj.xLabelYOffset;
+        this.xLabelXOffset = obj.yLabelXOffset;
+        this.yLabelXOffset = obj.yLabelXOffset;
 
 
 
@@ -79,6 +83,9 @@ class ScatterPlotChart {
 		line(0, 0, 0, -this.h);
 
         text(this.titleText, this.titleXOffset,this.titleYOffset);
+
+
+            
 
         // Design for plotted points
 
@@ -116,10 +123,16 @@ class ScatterPlotChart {
             //first parameter  calculates the begining postion of the ellipse using jump
             //Second parameter calcualtes the plotheight which is used to move the plots on the yaxis based upon their values
             //plot width/height are paramter passed in from user to determine how big the ellipse looks(keeping these last two parameter equal to one another makes it round perfectly)
-			ellipse(jump, -plotHeight, this.plotWidth, this.plotHeight);
-            //line(this.plotWidth / 2, -i * plotGap, )
+			
+            push();
             
+            ellipse(jump, -plotHeight, this.plotWidth, this.plotHeight);
+            //Tried ading lines to make it line chart but didnt work
+            //line(this.plotWidth / 2, -this.data[i][this.yAxisValue * this.scale], this.plotWidth / 2 + this.plotGap +this.plotWidth, -this.data[i+1] )
             
+            translate(plotGap + this.plotWidth, 0);
+
+            pop();
 
             
 
