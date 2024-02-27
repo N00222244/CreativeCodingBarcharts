@@ -43,6 +43,8 @@ class ScatterPlotChart {
         this.plotStrokeThickness = obj.plotStrokeThickness;
         this.plotStrokeColour = obj.plotStrokeColour;
         this.numPlots = this.data.length;
+        this.maxVal = obj.maxVal;
+        this.minVal = obj.minVal;
 
         //label properties
         this.labelPadding = obj.labelPadding;
@@ -88,6 +90,7 @@ class ScatterPlotChart {
 
 
         let maxValue = max(this.data.map((x) => x.Total)) 
+        let minValue = min(this.data.map((x)=> x.Total))
         let scale = this.h / max(this.data.map((x) => x.Total));
 
         //console.log(plotGap);
@@ -114,6 +117,11 @@ class ScatterPlotChart {
             //Second parameter calcualtes the plotheight which is used to move the plots on the yaxis based upon their values
             //plot width/height are paramter passed in from user to determine how big the ellipse looks(keeping these last two parameter equal to one another makes it round perfectly)
 			ellipse(jump, -plotHeight, this.plotWidth, this.plotHeight);
+            
+            
+
+            
+
 
             noStroke();
             fill(this.labelColour);
@@ -123,10 +131,11 @@ class ScatterPlotChart {
             
             translate(jump + this.plotWidth / 2, this.labelPadding )
             rotate(this.labelRotation);
-            text(this.data[i][this.yAxisValue], this.plotWidth / 2, -this.data[i][this.yAxisValue] * this.scale -5) 
+            text(labels[i], 0, 0); 
             pop();
         }
 
+        
         //Draw Ticks 
         stroke(this.tickColour);
         
@@ -149,7 +158,7 @@ class ScatterPlotChart {
             // w value based off of parameter for tick length in instance of barchart
             // h value is based upon the instances of i in the upward direction multiplied by tickgap)
             
-            line(0, -i * tickGap, -this.tickStrokeLength, -i * tickGap);
+            line(0, -i * tickGap, this.w, -i * tickGap);
 
             //Design and positioning of values on y axis
 

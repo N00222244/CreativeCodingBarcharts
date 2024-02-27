@@ -127,6 +127,7 @@ class BarChart {
             //Design and positioning of values on yaxis
 
             noStroke();
+            
             fill(this.tickTextColour);
             textAlign(RIGHT, CENTER);
             textSize(15);

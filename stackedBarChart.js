@@ -66,15 +66,33 @@ class StackedBarChart {
 		line(0, 0, this.w, 0);
 		line(0, 0, 0, -this.h);
 
+        
         text(this.titleText, this.titleXOffset,this.titleYOffset);
 
-        
+        push();
         
         rect(300,-180,200,125);
         text("Key", 350, -160);
-        
+        noStroke();
+        fill('#000000');
+        text("Sea Travel",380,-125);
+        fill('#89CFF0');
         rect(325,-140,25,25);
+        
+        
+        
+        fill('#C8A2C8');        
         rect(325,-100,25,25);
+        noStroke();
+        fill('#000000');
+        text("Air Travel",380,-85);
+
+
+        pop();        
+
+        
+
+
         
         
 
@@ -112,13 +130,15 @@ class StackedBarChart {
             text(labels[i], 0, 0);
             pop();
 
+
+            
             
             
         
 
 
 
-            //let average = (cleanData.values )
+            
 
             push();
             for(let j = 0; j < this.yAxisValue.length; j++){
