@@ -12,6 +12,7 @@ class HorizontalBarChart{
         this.data = obj.data,
         this.yAxisValue = obj.yAxisValue;
         this.xAxisLabel = obj.xAxisLabel;
+        this.maxValue = obj.maxValue;
 
         //Title Properties
         this.titleXOffset = obj.titleXOffset;
@@ -81,8 +82,8 @@ class HorizontalBarChart{
 		
 		//bargap is calculated using the number of bars * by the bar width which is then dived by the the number of bars +1, this is then taken away from the width of the chartwidth or w in this case
 		let barGap = (this.w - (this.numBars * this.barWidth)) / (this.numBars + 1);
-        let maxValue = max(this.data.map((x) => x.Total)) 
-        let scale = this.h / max(this.data.map((x) => x.Total));
+        //let maxValue = max(this.data.map((x) => x.Total)) 
+        let scale = this.h / this.maxValue;
     
 
 		for (let i = 0; i < this.numBars; i++) {
@@ -147,7 +148,7 @@ class HorizontalBarChart{
 
             // value is calculated by taking the max value and dividing it by the number of ticks then multiplying it by the instances of i 
 
-            let value = (maxValue / this.numTicks) * i;
+            let value = (this.maxValue / this.numTicks) * i;
 
             
 

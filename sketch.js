@@ -40,11 +40,13 @@ function setup() {
        xAxisLabel: "Year",
        axisLineColour: "#000000",
        axisLineThickness: 1,
+       
 
        barWidth: 15,
        barColour: "#89CFF0",
        barStrokeThickness: 1,
        barStrokeColour: "#000000",
+       maxValue: 20625.6,
 
        titleText: "Air Travel (In thousands)",
        titleXOffset: 30,
@@ -79,6 +81,7 @@ function setup() {
         xAxisLabel: "Year",
         axisLineColour: "#000000",
         axisLineThickness: 1,
+        maxValue: 1323.3,
  
         barWidth: 15,
         barColour: "#C8A2C8",
@@ -95,7 +98,7 @@ function setup() {
         tickStrokeWeight: 1,
         tickStrokeLength: 10,
         tickPadding: 10,
-        numTicks:15,
+        numTicks:5,
         tickTextColour: "#000000",
         tickTextSize: 14,
         tickDecimals: 0,
@@ -114,7 +117,7 @@ function setup() {
         h:250,
  
         data: cleanData,
-        yAxisValue: "Air",
+        yAxisValue: "Total",
         xAxisLabel: "Year",
         axisLineColour: "#000000",
         axisLineThickness: 1,
@@ -127,7 +130,7 @@ function setup() {
         minVal:0,
         maxVal:32,
  
-        titleText: "Air Travel(In Thousands)",
+        titleText: "Total Air/Boat Travel(In Thousands)",
         titleXOffset: 30,
         titleYOffset: -300,
         titleWidth: 300,
@@ -161,6 +164,7 @@ function setup() {
         xAxisLabel: "Year",
         axisLineColour: "#000000",
         axisLineThickness: 1,
+        maxValue: 20625.6,
  
         barWidth: 15,
         barColour: "#C8A2C8",
@@ -202,6 +206,7 @@ function setup() {
         xAxisLabel: "Year",
         axisLineColour: "#000000",
         axisLineThickness: 1,
+        maxValue:1323.3,
  
         barWidth: 15,
         barColour: "#89CFF0",

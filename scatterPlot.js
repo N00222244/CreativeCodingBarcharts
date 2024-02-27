@@ -90,7 +90,7 @@ class ScatterPlotChart {
 
 
         let maxValue = max(this.data.map((x) => x.Total)) 
-        let minValue = min(this.data.map((x)=> x.Total))
+        //let minValue = min(this.data.map((x)=> x.Total))
         let scale = this.h / max(this.data.map((x) => x.Total));
 
         //console.log(plotGap);
@@ -117,6 +117,7 @@ class ScatterPlotChart {
             //Second parameter calcualtes the plotheight which is used to move the plots on the yaxis based upon their values
             //plot width/height are paramter passed in from user to determine how big the ellipse looks(keeping these last two parameter equal to one another makes it round perfectly)
 			ellipse(jump, -plotHeight, this.plotWidth, this.plotHeight);
+            //line(this.plotWidth / 2, -i * plotGap, )
             
             
 
